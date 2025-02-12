@@ -1,10 +1,11 @@
 import sql from "mysql2";
 
 const db = sql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "forever_brand",
+  host: process.env.DB_HOST,
+  user: process.env.DB_USERNAME,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DATABASE,
+  port: process.env.DB_PORT,
 });
 
 db.connect((err) => {
