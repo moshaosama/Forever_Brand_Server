@@ -3,6 +3,8 @@ import dotenv from "dotenv";
 import SignUpRouter from "./Router/User/SignUpRouter.js";
 import LoginRouter from "./Router/User/LoginRouter.js";
 import cors from "cors";
+import addToCartRouter from "./Router/Cart/addCartRouter.js";
+import getCartRouter from "./Router/Cart/getCartRouter.js";
 dotenv.config();
 const PORT = process.env.PORT || 8000;
 const app = express();
@@ -16,6 +18,8 @@ app.use(cors());
 // Endpoints
 app.use("/signup", SignUpRouter);
 app.use("/login", LoginRouter);
+app.use("/addcart", addToCartRouter);
+app.use("/getcarts", getCartRouter);
 ////////////////////////////////
 
 app.listen(PORT, (err) => {
