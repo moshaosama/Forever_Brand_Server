@@ -17,3 +17,21 @@ export const getCarts = async (req, res) => {
     });
   }
 };
+
+export const getSumPrice = async (req, res) => {
+  try {
+    const Query = "SELECT SUM(price) FROM cart";
+
+    const [result] = await db.promise().query(Query);
+
+    return res.status(200).json({
+      statusbar: "success",
+      Total: result[0]["SUM(price)"],
+    });
+  } catch (err) {
+    return res.status(500).json({
+      statusbar: "ERROR",
+      error: err.message,
+    });
+  }
+};

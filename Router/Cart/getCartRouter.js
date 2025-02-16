@@ -1,7 +1,12 @@
 import express from "express";
-import { getCarts } from "../../Controller/Cart/getCartController.js";
+import {
+  getCarts,
+  getSumPrice,
+} from "../../Controller/Cart/getCartController.js";
 const getCartRouter = express.Router();
+const getSumRouter = express.Router();
 
 getCartRouter.route("/").get(getCarts);
+getSumRouter.route("/").get(getSumPrice);
 
-export default getCartRouter;
+export { getCartRouter, getSumRouter };

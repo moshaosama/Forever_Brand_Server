@@ -4,9 +4,10 @@ import SignUpRouter from "./Router/User/SignUpRouter.js";
 import LoginRouter from "./Router/User/LoginRouter.js";
 import cors from "cors";
 import addToCartRouter from "./Router/Cart/addCartRouter.js";
-import getCartRouter from "./Router/Cart/getCartRouter.js";
+import { getCartRouter, getSumRouter } from "./Router/Cart/getCartRouter.js";
+import deleteCartRouter from "./Router/Cart/deleteCartRouter.js";
 dotenv.config();
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT;
 const app = express();
 
 //Middleware
@@ -20,6 +21,8 @@ app.use("/signup", SignUpRouter);
 app.use("/login", LoginRouter);
 app.use("/addcart", addToCartRouter);
 app.use("/getcarts", getCartRouter);
+app.use("/deletecart", deleteCartRouter);
+app.use("/getsumprice", getSumRouter);
 ////////////////////////////////
 
 app.listen(PORT, (err) => {
