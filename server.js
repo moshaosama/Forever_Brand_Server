@@ -6,6 +6,8 @@ import cors from "cors";
 import addToCartRouter from "./Router/Cart/addCartRouter.js";
 import { getCartRouter, getSumRouter } from "./Router/Cart/getCartRouter.js";
 import deleteCartRouter from "./Router/Cart/deleteCartRouter.js";
+import createDeliveryRouter from "./Router/Delivery/CreateDelivery.js";
+import getDeliveryRouter from "./Router/Delivery/getDelivery.js";
 dotenv.config();
 const PORT = process.env.PORT;
 const app = express();
@@ -23,6 +25,8 @@ app.use("/addcart", addToCartRouter);
 app.use("/getcarts", getCartRouter);
 app.use("/deletecart", deleteCartRouter);
 app.use("/getsumprice", getSumRouter);
+app.use("/createdelivery", createDeliveryRouter);
+app.use("/getdelivery", getDeliveryRouter);
 ////////////////////////////////
 
 app.listen(PORT, (err) => {
