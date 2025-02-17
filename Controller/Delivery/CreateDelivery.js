@@ -15,6 +15,7 @@ export const createDelivery = async (req, res) => {
       ZipCode,
       Country,
       Phone,
+      Date,
     } = req.body;
 
     if (
@@ -35,7 +36,7 @@ export const createDelivery = async (req, res) => {
     }
 
     const Query1 =
-      "INSERT INTO delivery  (FirstName, LastName, EmailAddress, Street, City, State, ZipCode, Country, Phone,  `Order`) VALUES (? ,? ,? ,? ,? ,? ,?, ?,?, ?)";
+      "INSERT INTO delivery  (FirstName, LastName, EmailAddress, Street, City, State, ZipCode, Country, Phone,Date,  `Order`) VALUES (? ,? ,?, ? ,? ,? ,? ,?, ?,?, ?)";
 
     const VAlUES = [
       FirstName,
@@ -47,6 +48,7 @@ export const createDelivery = async (req, res) => {
       ZipCode,
       Country,
       Phone,
+      Date,
       JSON.stringify(result2),
     ];
 
