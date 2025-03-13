@@ -1,12 +1,8 @@
 import mysql from "mysql2";
 
-const db = mysql.createConnection({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USERNAME,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DATABASE,
-  port: process.env.DB_PORT || 3306,
-});
+const urlDb = `mysql://root:wsyNFcjUlJygDXSHWgawNWNaFYjQzcWd@mysql.railway.internal:3306/railway`;
+
+const db = mysql.createConnection(urlDb);
 
 db.connect((err) => {
   if (err) {
