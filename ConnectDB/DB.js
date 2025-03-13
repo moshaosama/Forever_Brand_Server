@@ -1,6 +1,6 @@
 import mysql from "mysql2";
 
-const urlDb = `mysql://root:wsyNFcjUlJygDXSHWgawNWNaFYjQzcWd@mysql.railway.internal:3306/railway`;
+const urlDb = `mysql://root:wsyNFcjUlJygDXSHWgawNWNaFYjQzcWd@mysql.railway.internal:3306/forever_brand`;
 
 const db = mysql.createConnection(urlDb);
 
