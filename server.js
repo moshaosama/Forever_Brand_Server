@@ -9,7 +9,7 @@ import deleteCartRouter from "./Router/Cart/deleteCartRouter.js";
 import createDeliveryRouter from "./Router/Delivery/CreateDelivery.js";
 import getDeliveryRouter from "./Router/Delivery/getDelivery.js";
 dotenv.config();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT | 8000;
 const app = express();
 
 //Middleware
