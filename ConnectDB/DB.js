@@ -3,9 +3,11 @@ import dotenv from "dotenv";
 
 dotenv.config(); // 🛠️ تحميل متغيرات البيئة من ملف .env
 
-const urlDB = `mysql://root:JoDeiyXeDjsNRqNvbOIYtHjQrZNYpeOI@mysql.railway.internal:3306/railway`;
-
-const db = mysql.createConnection(urlDB);
+const db = mysql.createConnection({
+  host: process.env.DB_HOST,
+  user: process.env.DB_USERNAME,
+  database: process.env.DATABASE,
+});
 
 db.connect((err) => {
   if (err) {
