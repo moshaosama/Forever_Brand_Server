@@ -27,6 +27,10 @@ app.use("/deletecart", deleteCartRouter);
 app.use("/getsumprice", getSumRouter);
 app.use("/createdelivery", createDeliveryRouter);
 app.use("/getdelivery", getDeliveryRouter);
+
+app.route("/", (req, res) => {
+  res.json("Mosha Osama");
+});
 ////////////////////////////////
 
 app.listen(PORT, (err) => {
