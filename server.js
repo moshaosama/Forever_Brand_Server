@@ -28,7 +28,7 @@ app.use("/getsumprice", getSumRouter);
 app.use("/createdelivery", createDeliveryRouter);
 app.use("/getdelivery", getDeliveryRouter);
 
-app.route("/", (req, res) => {
+app.get("/", (req, res) => {
   res.json("Mosha Osama");
 });
 ////////////////////////////////
