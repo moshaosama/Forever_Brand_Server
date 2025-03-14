@@ -11,11 +11,11 @@ import getDeliveryRouter from "./Router/Delivery/getDelivery.js";
 dotenv.config();
 const PORT = process.env.PORT | 8000;
 const app = express();
-
 //Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
+dotenv.config();
 ////////////////////////////////
 
 // Endpoints
